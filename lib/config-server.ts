@@ -18,16 +18,30 @@ export function getServerSiteConfig(): SiteConfig {
             return {
                 ...siteConfig,
                 ...yamlConfig,
-                ads: { ...siteConfig.ads, ...yamlConfig.ads },
+                ads: {
+                    ...siteConfig.ads,
+                    ...yamlConfig.ads,
+                    google_adsense: process.env.NEXT_PUBLIC_ADSENSE_ID || yamlConfig.ads?.google_adsense || siteConfig.ads.google_adsense
+                },
                 site: {
                     ...siteConfig.site,
                     ...yamlConfig.site,
                     base_url: process.env.NEXT_PUBLIC_SITE_URL || process.env.URL || yamlConfig.site?.base_url || siteConfig.site.base_url
                 },
                 theme: { ...siteConfig.theme, ...yamlConfig.theme },
-                analytics: { ...siteConfig.analytics, ...yamlConfig.analytics },
+                analytics: {
+                    ...siteConfig.analytics,
+                    ...yamlConfig.analytics,
+                    google_analytics: process.env.NEXT_PUBLIC_GA_ID || yamlConfig.analytics?.google_analytics || siteConfig.analytics.google_analytics,
+                    plausible: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || yamlConfig.analytics?.plausible || siteConfig.analytics.plausible,
+                    facebook_pixel: process.env.NEXT_PUBLIC_FB_PIXEL_ID || yamlConfig.analytics?.facebook_pixel || siteConfig.analytics.facebook_pixel
+                },
                 social: { ...siteConfig.social, ...yamlConfig.social },
-                features: { ...siteConfig.features, ...yamlConfig.features },
+                features: {
+                    ...siteConfig.features,
+                    ...yamlConfig.features,
+                    disqus_shortname: process.env.DISQUS_SHORTNAME || yamlConfig.features?.disqus_shortname || siteConfig.features.disqus_shortname
+                },
                 seo: { ...siteConfig.seo, ...yamlConfig.seo },
                 author: { ...siteConfig.author, ...yamlConfig.author },
                 syntax_highlighting: { ...siteConfig.syntax_highlighting, ...yamlConfig.syntax_highlighting },
