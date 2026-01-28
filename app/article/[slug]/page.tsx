@@ -262,7 +262,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     </div>
 
                     {/* Comments Section */}
-                    {config.features.comments === 'disqus' && config.features.disqus_shortname && (
+                    {config.features.enable_comments && config.features.comments === 'disqus' && config.features.disqus_shortname && (
                         <DisqusComments
                             shortname={config.features.disqus_shortname}
                             url={`${config.site.base_url}/article/${article.slug}`}

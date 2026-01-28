@@ -58,6 +58,7 @@ export interface SiteConfig {
     };
     features: {
         newsletter: boolean;
+        enable_comments?: boolean; // Toggle entire comments section
         comments: 'disqus' | 'facebook' | 'custom' | '';
         disqus_shortname?: string;
         search: boolean;

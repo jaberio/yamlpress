@@ -58,6 +58,7 @@ export const siteConfig: SiteConfig = {
     },
     features: {
         newsletter: true,
+        enable_comments: false,
         comments: "",
         disqus_shortname: "",
         search: true,
