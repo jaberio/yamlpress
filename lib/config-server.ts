@@ -19,7 +19,11 @@ export function getServerSiteConfig(): SiteConfig {
                 ...siteConfig,
                 ...yamlConfig,
                 ads: { ...siteConfig.ads, ...yamlConfig.ads },
-                site: { ...siteConfig.site, ...yamlConfig.site },
+                site: {
+                    ...siteConfig.site,
+                    ...yamlConfig.site,
+                    base_url: process.env.NEXT_PUBLIC_SITE_URL || process.env.URL || yamlConfig.site?.base_url || siteConfig.site.base_url
+                },
                 theme: { ...siteConfig.theme, ...yamlConfig.theme },
                 analytics: { ...siteConfig.analytics, ...yamlConfig.analytics },
                 social: { ...siteConfig.social, ...yamlConfig.social },
