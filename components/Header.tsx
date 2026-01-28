@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle'
 import { getSiteConfig } from '@/lib/config'
 
 export default function Header() {
+    const config = getSiteConfig()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     // In a real app, we'd use a client-side config provider
@@ -28,7 +29,7 @@ export default function Header() {
                             whileTap={{ scale: 0.95 }}
                             className="font-heading font-bold text-2xl text-primary dark:text-white"
                         >
-                            My Blog
+                            {config.site.name}
                         </motion.div>
                     </Link>
 
