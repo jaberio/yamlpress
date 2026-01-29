@@ -258,6 +258,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                             shortname={config.features.disqus_shortname}
                             url={`${config.site.base_url}/article/${article.slug}`}
                             identifier={article.slug}
+                            title={article.title}
                         />
                     )}
                 </div>
