@@ -4,7 +4,7 @@ excerpt: "Welcome to our Medium-like blog! Learn about the features, design phil
 author: "John Doe"
 date: "2026-01-27"
 tags: ["introduction", "welcome", "getting-started"]
-category: "General"
+category: "How To"
 coverImage: "https://images.unsplash.com/photo-1605165566807-508fb529cf3e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 featured: true
 ---

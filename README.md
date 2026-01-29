@@ -143,6 +143,21 @@ features:
   tags: true
 ```
 
+### Header Navigation (Multi-Dropdowns)
+
+Define multiple dropdown menus in the header with their own labels and categories:
+
+```yaml
+navigation:
+  header:
+    dropdowns:
+      - label: "Learn"
+        category_ids: ["how-to", "tutorials"]
+      - label: "Explore"
+        category_ids: ["guides", "case-studies"]
+```
+
+
 ## 🎨 Customization
 
 ### Colors

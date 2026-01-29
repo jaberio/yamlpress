@@ -36,6 +36,44 @@ social:
   github: "https://github.com/example"
   email: "hello@example.com"
 
+# Categories & Navigation
+categories:
+  enabled: true
+  items:
+    - id: "how-to"
+      title: "How To"
+      slug: "/category/how-to"
+      description: "Practical step-by-step guides"
+    - id: "tutorials"
+      title: "Tutorials"
+      slug: "/category/tutorials"
+      description: "In-depth technical tutorials"
+    - id: "guides"
+      title: "Guides"
+      slug: "/category/guides"
+      description: "Long-form guides and best practices"
+    - id: "case-studies"
+      title: "Case Studies"
+      slug: "/category/case-studies"
+      description: "Real-world examples"
+
+navigation:
+  header:
+    # Legacy Support (optional)
+    show_categories_dropdown: false 
+    label: "More"
+    
+    # New Multi-Dropdown Support
+    dropdowns:
+      - label: "Learn"
+        category_ids: ["how-to", "tutorials"]
+
+      - label: "Explore"
+        category_ids: ["guides", "case-studies"]
+
+      - label: "More"
+        category_ids: ["guides"]
+
 # Pages Configuration
 pages:
   - title: "Home"

@@ -101,7 +101,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${roboto.variable} font-body antialiased`}>
         <div className="flex flex-col min-h-screen">
-          <Header siteName={config.site.name} />
+          <Header siteName={config.site.name} config={config} />
           <main className="flex-grow">
             {children}
           </main>

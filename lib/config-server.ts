@@ -33,6 +33,8 @@ export function getServerSiteConfig(): SiteConfig {
                     facebook_pixel: process.env.NEXT_PUBLIC_FB_PIXEL_ID || yamlConfig.analytics?.facebook_pixel || siteConfig.analytics.facebook_pixel
                 },
                 social: { ...siteConfig.social, ...yamlConfig.social },
+                categories: { ...siteConfig.categories, ...yamlConfig.categories },
+                navigation: { ...siteConfig.navigation, ...yamlConfig.navigation },
                 features: {
                     ...siteConfig.features,
                     ...yamlConfig.features,

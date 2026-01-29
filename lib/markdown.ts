@@ -51,6 +51,7 @@ export function getArticleBySlug(slug: string): Article {
         author: data.author || '',
         date: data.date || '',
         tags: data.tags || [],
+        categories: data.categories || (data.category ? [data.category] : []),
         category: data.category,
         coverImage: data.coverImage,
         readingTime: data.readingTime || stats.text,
@@ -94,6 +95,7 @@ export function getArticlesByTag(tag: string): ArticlePreview[] {
 export function getArticlesByCategory(category: string): ArticlePreview[] {
     const allArticles = getAllArticles();
     return allArticles.filter(article =>
+        article.categories?.some(c => c.toLowerCase() === category.toLowerCase()) ||
         article.category?.toLowerCase() === category.toLowerCase()
     );
 }
@@ -120,6 +122,9 @@ export function getAllCategories(): string[] {
     const categoriesSet = new Set<string>();
 
     articles.forEach(article => {
+        if (article.categories) {
+            article.categories.forEach(c => categoriesSet.add(c));
+        }
         if (article.category) {
             categoriesSet.add(article.category);
         }

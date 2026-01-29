@@ -42,6 +42,16 @@ export const siteConfig: SiteConfig = {
         github: "https://github.com/example",
         email: "hello@example.com",
     },
+    categories: {
+        enabled: true,
+        items: []
+    },
+    navigation: {
+        header: {
+            show_categories_dropdown: false,
+            label: "Articles"
+        }
+    },
     pages: [
         { title: "Home", slug: "/", visible: true },
         { title: "About", slug: "/about", visible: true },

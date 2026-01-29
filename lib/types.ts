@@ -37,6 +37,25 @@ export interface SiteConfig {
         github?: string;
         email?: string;
     };
+    categories: {
+        enabled: boolean;
+        items: Array<{
+            id: string;
+            title: string;
+            slug: string;
+            description?: string;
+        }>;
+    };
+    navigation: {
+        header: {
+            show_categories_dropdown: boolean; // Deprecated but kept for backward compatibility if needed
+            label: string;
+            dropdowns?: Array<{
+                label: string;
+                category_ids: string[];
+            }>;
+        };
+    };
     pages: Array<{
         title: string;
         slug: string;
@@ -140,7 +159,8 @@ export interface ArticleFrontMatter {
     author: string;
     date: string;
     tags: string[];
-    category?: string;
+    categories?: string[];
+    category?: string; // Forward compatibility / Legacy support
     coverImage?: string;
     readingTime?: string;
     featured?: boolean;
