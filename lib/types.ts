@@ -30,11 +30,7 @@ export interface SiteConfig {
         plausible?: string;
         facebook_pixel?: string;
     };
-    ads: {
-        google_adsense?: string;
-        mediavine?: boolean;
-        custom_ads_code?: string;
-    };
+
     social: {
         twitter?: string;
         linkedin?: string;

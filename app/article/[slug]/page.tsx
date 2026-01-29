@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { format } from 'date-fns'
 import { Metadata } from 'next'
-import AdsBanner from '@/components/AdsBanner'
+
 import NewsletterSignup from '@/components/NewsletterSignup'
 import ArticleCard from '@/components/ArticleCard'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -227,21 +227,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                         />
                     </div>
 
-                    {/* Ad Banner */}
-                    {config.ads.google_adsense && (
-                        <div className="my-12">
-                            {(() => {
-                                const [client, slot] = (config.ads.google_adsense || '').split('/').map(s => s.trim());
-                                return (
-                                    <AdsBanner
-                                        adClient={client}
-                                        adSlot={slot}
-                                        customCode={config.ads.custom_ads_code}
-                                    />
-                                );
-                            })()}
-                        </div>
-                    )}
+
 
                     {/* Mobile Share (Bottom) */}
                     <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 lg:hidden">

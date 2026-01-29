@@ -18,11 +18,7 @@ export function getServerSiteConfig(): SiteConfig {
             return {
                 ...siteConfig,
                 ...yamlConfig,
-                ads: {
-                    ...siteConfig.ads,
-                    ...yamlConfig.ads,
-                    google_adsense: process.env.NEXT_PUBLIC_ADSENSE_ID || yamlConfig.ads?.google_adsense || siteConfig.ads.google_adsense
-                },
+
                 site: {
                     ...siteConfig.site,
                     ...yamlConfig.site,

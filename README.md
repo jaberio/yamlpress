@@ -5,7 +5,7 @@
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jaberio/next-medium)
 
-A fully static, production-ready Next.js 13+ blog inspired by Medium.com. Features include rich animations, dark mode, SEO optimization, analytics, ads integration, and complete YAML-based configuration.
+A fully static, production-ready Next.js 13+ blog inspired by Medium.com. Features include rich animations, dark mode, SEO optimization, analytics, and complete YAML-based configuration.
 
 ## ✨ Features
 
@@ -17,7 +17,6 @@ A fully static, production-ready Next.js 13+ blog inspired by Medium.com. Featur
 - 🎯 **Tag System**: Filter articles by tags and categories
 - 🔎 **Search**: Real-time article search functionality
 - 📊 **Analytics**: Google Analytics, Plausible, Facebook Pixel support
-- 💰 **Ads Ready**: Google AdSense and custom ad integration
 - 📧 **Newsletter**: Built-in subscription system
 - 💬 **Comments**: Disqus integration support
 - ⚙️ **YAML Config**: Everything customizable via single config file
@@ -189,24 +188,7 @@ analytics:
   plausible: "yourdomain.com"
 ```
 
-## 💰 Ads Integration
 
-### Google AdSense
-
-1. Get your AdSense publisher ID
-2. Add to config:
-```yaml
-ads:
-  google_adsense: "ca-pub-XXXXXXXXXX"
-```
-
-### Custom Ads
-
-Add custom ad code:
-```yaml
-ads:
-  custom_ads_code: "<script>...</script>"
-```
 
 ## 📧 Newsletter Integration
 

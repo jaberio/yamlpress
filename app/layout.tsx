@@ -97,14 +97,7 @@ export default function RootLayout({
             src="https://plausible.io/js/script.js"
           />
         )}
-        {/* Google AdSense */}
-        {config.ads.google_adsense && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${config.ads.google_adsense.split('/')[0].trim()}`}
-            crossOrigin="anonymous"
-          />
-        )}
+
       </head>
       <body className={`${inter.variable} ${roboto.variable} font-body antialiased`}>
         <div className="flex flex-col min-h-screen">

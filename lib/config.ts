@@ -35,11 +35,7 @@ export const siteConfig: SiteConfig = {
         plausible: "",
         facebook_pixel: "",
     },
-    ads: {
-        google_adsense: "",
-        mediavine: false,
-        custom_ads_code: "",
-    },
+
     social: {
         twitter: "https://twitter.com/example",
         linkedin: "https://linkedin.com/in/example",

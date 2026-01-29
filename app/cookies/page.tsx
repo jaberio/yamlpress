@@ -52,7 +52,7 @@ export default function CookiesPage() {
                             <strong>Third Party Cookies:</strong> In some special cases we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site.
                             <ul>
                                 {config.analytics.google_analytics && <li>This site uses Google Analytics which is one of the most widespread and trusted analytics solution on the web for helping us to understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.</li>}
-                                {config.ads.google_adsense && <li>The Google AdSense service we use to serve advertising uses a DoubleClick cookie to serve more relevant ads across the web and limit the number of times that a given ad is shown to you.</li>}
+
                             </ul>
                         </li>
                     </ul>
