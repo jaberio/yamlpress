@@ -3,7 +3,7 @@
  * Supports Google Analytics, Plausible, and Facebook Pixel
  */
 
-import { getSiteConfig } from './config';
+import { getSiteConfig } from '../config/client';
 
 /**
  * Initialize analytics scripts based on configuration

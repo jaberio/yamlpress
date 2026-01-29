@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { getServerSiteConfig } from '@/lib/config-server'
+import { getServerSiteConfig } from '@/lib/config/server'
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({

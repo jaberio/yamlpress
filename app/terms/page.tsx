@@ -1,4 +1,4 @@
-import { getServerSiteConfig } from '@/lib/config-server'
+import { getServerSiteConfig } from '@/lib/config/server'
 import Link from 'next/link'
 import { Metadata } from 'next'
 

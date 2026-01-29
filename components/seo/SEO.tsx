@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getSiteConfig } from '@/lib/config'
+import { getSiteConfig } from '@/lib/config/client'
 
 interface SEOProps {
     title?: string

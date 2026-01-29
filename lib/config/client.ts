@@ -1,7 +1,7 @@
 // Static configuration - imported directly instead of reading YAML at runtime
 // This allows the site to work with Next.js static export
 
-import { SiteConfig } from './types';
+import { SiteConfig } from '../types';
 
 // This configuration matches the structure from config.yaml
 // Edit this file to customize your site

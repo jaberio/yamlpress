@@ -1,4 +1,4 @@
-import { getServerSiteConfig } from '@/lib/config-server'
+import { getServerSiteConfig } from '@/lib/config/server'
 import { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {

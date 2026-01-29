@@ -1,4 +1,4 @@
-import { getServerSiteConfig } from '@/lib/config-server'
+import { getServerSiteConfig } from '@/lib/config/server'
 import Image from 'next/image'
 import { Metadata } from 'next'
 
