@@ -98,7 +98,7 @@ posts:
 # Optional Features
 features:
   newsletter: true
-  enable_comments: false
+  enable_comments: true
   comments: "disqus" # options: disqus, facebook, custom, or empty string to disable
   disqus_shortname: "" # required if comments is "disqus"
   search: true
