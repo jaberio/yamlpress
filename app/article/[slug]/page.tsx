@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     let article
     try {
         article = getArticleBySlug(slug)
-    } catch (error) {
+    } catch (_error) {
         notFound()
     }
 
@@ -208,7 +208,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                             source={article.content}
                             components={{
                                 ...components,
-                                code: (props: any) => <components.code {...props} config={config.syntax_highlighting} />
+                                code: (props: React.ComponentPropsWithoutRef<'code'>) => <components.code {...props} config={config.syntax_highlighting} />
                             }}
                             options={{
                                 parseFrontmatter: true,

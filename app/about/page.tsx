@@ -60,8 +60,8 @@ export default function AboutPage() {
                         providing high-quality content that educates, inspires, and entertains our readers.
                     </p>
                     <p>
-                        Whether you're looking for technical tutorials, design inspiration, or thought-provoking
-                        articles, you'll find it here. We're committed to creating a platform where ideas can
+                        Whether you&apos;re looking for technical tutorials, design inspiration, or thought-provoking
+                        articles, you&apos;ll find it here. We&apos;re committed to creating a platform where ideas can
                         flourish and communities can grow.
                     </p>
                 </section>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                         <li><strong>Quality over Quantity:</strong> We focus on creating in-depth, well-researched content.</li>
                         <li><strong>Accessibility:</strong> Knowledge should be accessible to everyone, regardless of background.</li>
                         <li><strong>Community:</strong> We value our readers and encourage meaningful discussions.</li>
-                        <li><strong>Continuous Learning:</strong> We're always learning and growing alongside our audience.</li>
+                        <li><strong>Continuous Learning:</strong> We&apos;re always learning and growing alongside our audience.</li>
                     </ul>
                 </section>
             </div>

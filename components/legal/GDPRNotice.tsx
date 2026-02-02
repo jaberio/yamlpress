@@ -13,7 +13,9 @@ export default function GDPRNotice({ text }: GDPRNoticeProps) {
         // Check if user has already accepted
         const accepted = localStorage.getItem('gdpr_accepted');
         if (!accepted) {
-            setIsVisible(true);
+            // Defer state update to avoid synchronous setState in effect
+            const timeoutId = setTimeout(() => setIsVisible(true), 0);
+            return () => clearTimeout(timeoutId);
         }
     }, []);
 

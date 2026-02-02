@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { getServerSiteConfig } from '@/lib/config/server'
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -25,7 +24,7 @@ export default function ContactPage() {
             setStatus('success')
             setMessage('Thank you for your message! We\'ll get back to you soon.')
             setFormData({ name: '', email: '', subject: '', message: '' })
-        } catch (error) {
+        } catch (_error) {
             setStatus('error')
             setMessage('Failed to send message. Please try again.')
         }
@@ -52,7 +51,7 @@ export default function ContactPage() {
                         Get in Touch
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-400">
-                        Have a question or want to work together? We'd love to hear from you.
+                        Have a question or want to work together? We&apos;d love to hear from you.
                     </p>
                 </header>
 

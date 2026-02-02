@@ -25,7 +25,7 @@ export default function PrivacyPage() {
 
                 <article className="prose prose-lg prose-slate dark:prose-invert max-w-none bg-white dark:bg-gray-800 p-8 sm:p-12 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
                     <p className="lead">
-                        Your privacy is important to us. It is {config.site.name}'s policy to respect your privacy regarding any information we may collect from you across our website, <a href={config.site.base_url}>{config.site.base_url}</a>, and other sites we own and operate.
+                        Your privacy is important to us. It is {config.site.name}&apos;s policy to respect your privacy regarding any information we may collect from you across our website, <a href={config.site.base_url}>{config.site.base_url}</a>, and other sites we own and operate.
                     </p>
 
                     <h3>1. Information We Collect</h3>

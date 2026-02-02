@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { getSiteConfig } from '@/lib/config/client';
 import { getHighlightedCode } from '@/lib/content/syntax';
-import { useTheme } from 'next-themes';
 import cn from 'classnames';
 
 // Import CSS for providers - normally dynamically loaded, but for demo:
@@ -12,16 +10,27 @@ import 'highlight.js/styles/github.css';
 
 import { SiteConfig } from '@/lib/types';
 
+// Default config fallback when config is not provided
+const defaultConfig: SiteConfig['syntax_highlighting'] = {
+    provider: 'prism',
+    theme: { light: 'github', dark: 'github-dark' },
+    style: { font: 'monospace', font_size: '14px', line_numbers: false, border_radius: '8px' },
+    lines: { highlight: false, highlight_color: '#fef08a' },
+    ui: { copy_button: true, show_language: true, collapsible: true, max_lines: 25 },
+    performance: { lazy_load: true, preload_languages: ['javascript', 'typescript'] }
+};
+
 interface CodeBlockProps {
     code: string;
     language?: string;
     className?: string;
     showLineNumbers?: boolean;
     highlightLines?: number[];
-    config: SiteConfig['syntax_highlighting']; // Pass config explicitly
+    config?: SiteConfig['syntax_highlighting']; // Pass config explicitly (optional with fallback)
 }
 
-export default function CodeBlock({ code, language = 'text', className, showLineNumbers, highlightLines = [], config }: CodeBlockProps) {
+export default function CodeBlock({ code, language = 'text', className, showLineNumbers, highlightLines = [], config: propConfig }: CodeBlockProps) {
+    const config = propConfig ?? defaultConfig;
     const [highlightedHtml, setHighlightedHtml] = useState<string>('');
     const [isCollapsed, setIsCollapsed] = useState(false); // Collapsed state for large blocks
     const [isExpanded, setIsExpanded] = useState(false);   // User interaction state
@@ -34,19 +43,24 @@ export default function CodeBlock({ code, language = 'text', className, showLine
     const showLines = showLineNumbers ?? config.style.line_numbers;
 
     useEffect(() => {
+        let timeoutId: NodeJS.Timeout;
         try {
             const result = getHighlightedCode(code, lang, config);
-            setHighlightedHtml(result.html);
+            // Defer state updates to avoid synchronous setState in effect
+            timeoutId = setTimeout(() => {
+                setHighlightedHtml(result.html);
 
-            // Check line count for auto-collapse
-            const lineCount = code.split('\n').length;
-            if (config.ui.collapsible && lineCount > config.ui.max_lines) {
-                setIsCollapsed(true);
-            }
+                // Check line count for auto-collapse
+                const lineCount = code.split('\n').length;
+                if (config.ui.collapsible && lineCount > config.ui.max_lines) {
+                    setIsCollapsed(true);
+                }
+            }, 0);
         } catch (e) {
             console.error("Highlighting failed", e);
             // Fallback is just leaving highlightedHtml empty, which renders raw code
         }
+        return () => clearTimeout(timeoutId);
     }, [code, lang, config]);
 
     const handleCopy = async () => {

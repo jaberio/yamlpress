@@ -3,9 +3,32 @@ import Link from 'next/link';
 import CodeBlock from './CodeBlock';
 import Callout from '../ui/Callout';
 import React from 'react';
+import { SiteConfig } from '@/lib/types';
+
+// Type definitions for MDX components
+interface ArticleImageProps {
+    src?: string;
+    alt?: string;
+    title?: string;
+}
+
+interface QuoteProps {
+    children?: React.ReactNode;
+}
+
+interface ArticleLinkProps {
+    href?: string;
+    children?: React.ReactNode;
+}
+
+interface CodeProps {
+    className?: string;
+    children?: React.ReactNode;
+    config?: SiteConfig['syntax_highlighting'];
+}
 
 // Custom Image Component
-const ArticleImage = (props: any) => {
+const ArticleImage = (props: ArticleImageProps) => {
     // If width/height not provided, specific logic needed or just use fill + wrapper
     // For now, assuming basic img props or Next.js Image compatible
     if (props.src && props.src.startsWith('/')) {
@@ -28,8 +51,10 @@ const ArticleImage = (props: any) => {
     // External images or without dimensions
     return (
         <figure className="my-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-                {...props}
+                src={props.src}
+                alt={props.alt || ''}
                 className="rounded-lg max-h-[600px] w-auto mx-auto shadow-lg"
             />
             {props.alt && (
@@ -42,7 +67,7 @@ const ArticleImage = (props: any) => {
 };
 
 // Custom Quote Component
-const Quote = (props: any) => {
+const Quote = (props: QuoteProps) => {
     return (
         <blockquote className="border-l-4 border-accent pl-4 py-2 my-6 italic text-xl text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
             {props.children}
@@ -51,7 +76,7 @@ const Quote = (props: any) => {
 };
 
 // Custom Link Component
-const ArticleLink = (props: any) => {
+const ArticleLink = (props: ArticleLinkProps) => {
     const href = props.href;
     const isInternal = href && (href.startsWith('/') || href.startsWith('#'));
 
@@ -82,8 +107,8 @@ const components = {
     img: ArticleImage,
     blockquote: Quote,
     a: ArticleLink,
-    pre: (props: any) => <div {...props} />, // Handled by CodeBlock usually, but code is nested
-    code: (props: any) => {
+    pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />, // Handled by CodeBlock usually, but code is nested
+    code: (props: CodeProps) => {
         // If it's inline code (no className usually, or not block)
         const { className, children } = props;
         const match = /language-(\w+)/.exec(className || '');
@@ -112,3 +137,4 @@ const components = {
 };
 
 export default components;
+

@@ -9,10 +9,25 @@ interface DisqusCommentsProps {
     title?: string
 }
 
+// Disqus type definitions
+interface DisqusPage {
+    identifier: string
+    url: string
+    title?: string
+}
+
+interface DisqusConfig {
+    page: DisqusPage
+}
+
+interface DisqusInstance {
+    reset: (options: { reload: boolean; config: (this: DisqusConfig) => void }) => void
+}
+
 declare global {
     interface Window {
-        DISQUS: any
-        disqus_config: any
+        DISQUS: DisqusInstance | undefined
+        disqus_config: ((this: DisqusConfig) => void) | undefined
     }
 }
 
@@ -26,7 +41,7 @@ export default function DisqusComments({ shortname, url, identifier, title }: Di
                 // Disqus is already loaded, reset it for the new page
                 window.DISQUS.reset({
                     reload: true,
-                    config: function (this: any) {
+                    config: function (this: DisqusConfig) {
                         this.page.identifier = identifier
                         this.page.url = url
                         if (title) this.page.title = title
@@ -34,7 +49,7 @@ export default function DisqusComments({ shortname, url, identifier, title }: Di
                 })
             } else {
                 // First time loading: set up the config
-                window.disqus_config = function (this: any) {
+                window.disqus_config = function (this: DisqusConfig) {
                     this.page.identifier = identifier
                     this.page.url = url
                     if (title) this.page.title = title

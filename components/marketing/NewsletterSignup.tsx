@@ -28,7 +28,7 @@ export default function NewsletterSignup() {
                 setStatus('error')
                 setMessage('Something went wrong. Please try again.')
             }
-        } catch (error) {
+        } catch (_error) {
             setStatus('error')
             setMessage('Failed to subscribe. Please try again later.')
         }

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { getSiteConfig } from '@/lib/config/client';
 import { SiteConfig } from '@/lib/types';
 import cn from 'classnames';
 import GDPRNotice from '../legal/GDPRNotice';

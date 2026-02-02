@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getArticlesByCategory, getAllCategories } from '@/lib/content/markdown'
+import { getArticlesByCategory } from '@/lib/content/markdown'
 import { getServerSiteConfig } from '@/lib/config/server'
 import ArticleCard from '@/components/article/ArticleCard'
 import { Metadata } from 'next'

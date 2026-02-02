@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArticlePreview } from '@/lib/types'
 import ArticleCard from '@/components/article/ArticleCard'
@@ -13,9 +13,9 @@ interface SearchProps {
 export default function Search({ articles, allTags }: SearchProps) {
     const [searchQuery, setSearchQuery] = useState('')
     const [selectedTag, setSelectedTag] = useState<string>('')
-    const [filteredArticles, setFilteredArticles] = useState(articles)
 
-    useEffect(() => {
+    // Use useMemo for derived state instead of useEffect + setState
+    const filteredArticles = useMemo(() => {
         let results = articles
 
         // Filter by search query
@@ -36,7 +36,7 @@ export default function Search({ articles, allTags }: SearchProps) {
             )
         }
 
-        setFilteredArticles(results)
+        return results
     }, [searchQuery, selectedTag, articles])
 
     return (
