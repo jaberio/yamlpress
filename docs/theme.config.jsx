@@ -1,7 +1,7 @@
 export default {
-    logo: <span>Next Medium</span>,
+    logo: <span>YamlPress</span>,
     project: {
-        link: 'https://github.com/jaberio/next-medium'
+        link: 'https://github.com/jaberio/yamlpress'
     },
     darkMode: false, // Hide default theme switch
     navbar: {
@@ -13,8 +13,8 @@ export default {
         text: (
             <span>
                 MIT {new Date().getFullYear()} ©{' '}
-                <a href="https://github.com/jaberio/next-medium" target="_blank">
-                    Next Medium
+                <a href="https://github.com/jaberio/yamlpress" target="_blank">
+                    YamlPress
                 </a>
                 .
             </span>

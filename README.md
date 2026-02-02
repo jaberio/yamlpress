@@ -1,9 +1,9 @@
-# Next-Medium
+# YamlPress
 
 > [!WARNING]
 > 🚧 **Under Development**: This project is currently in active development. Features and APIs are subject to change.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jaberio/next-medium)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jaberio/yamlpress)
 
 A fully static, production-ready Next.js 13+ blog inspired by Medium.com. Features include rich animations, dark mode, SEO optimization, analytics, and complete YAML-based configuration.
 
@@ -36,7 +36,7 @@ A fully static, production-ready Next.js 13+ blog inspired by Medium.com. Featur
 1. **Clone or navigate to the project directory**
 
 ```bash
-cd next-medium
+cd yamlpress
 ```
 
 2. **Install dependencies**
@@ -257,7 +257,7 @@ Build the site and upload the `out/` directory to any static hosting service.
 ## 📁 Project Structure
 
 ```
-next-medium/
+yamlpress/
 ├── app/                    # Next.js app directory
 │   ├── layout.tsx         # Root layout
 │   ├── page.tsx           # Home page

@@ -1,6 +1,6 @@
 {
-    "name": "Next Medium",
-    "short_name": "Next Medium",
+    "name": "YamlPress",
+    "short_name": "YamlPress",
     "description": "A Medium-like blog built with Next.js",
     "start_url": "/",
     "display": "standalone",

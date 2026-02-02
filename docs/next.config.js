@@ -10,6 +10,6 @@ module.exports = withNextra({
     images: {
         unoptimized: true,
     },
-    basePath: isProd ? '/next-medium' : '',
-    assetPrefix: isProd ? '/next-medium/' : '',
+    basePath: isProd ? '/yamlpress' : '',
+    assetPrefix: isProd ? '/yamlpress/' : '',
 })

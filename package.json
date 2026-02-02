@@ -1,10 +1,10 @@
 {
-  "name": "next-medium",
+  "name": "yamlpress",
   "version": "0.1.0",
   "description": "A fully static, production-ready Next.js 13+ blog inspired by Medium.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaberio/next-medium"
+    "url": "https://github.com/jaberio/yamlpress"
   },
   "keywords": [
     "nextjs",
